@@ -14,11 +14,14 @@ def print_comma(txtfilename):
             x1 = x2[0:p]
             x2 = x2[p:]
             
-        x21 = x2+'/'
+        x21org = x2+'/'
         x22 = ''
-        q = x21.find('(=')
+        q = x21org.find('(=')
+        x21 = x21org
         if q >= 1:
-            x22 = x21[q:-1]
+            x21 = x21org[:q]+'/'
+            x22 = x21org[q:-1]
+        """print(x21+x22)"""
         while True:
             if re.search(r'([0-9])([0-9][0-9][0-9][^0-9])', x21) is not None:
                 x21 = re.sub(r'([0-9])([0-9][0-9][0-9][^0-9])', r'\1,\2', x21)
@@ -26,7 +29,9 @@ def print_comma(txtfilename):
                 x21 = x21[:-1]
                 break
                 
+        """"""
         print(x1+x21+x22)
+        """print(x1+x21)"""
         
 if __name__ == '__main__':
     """print_comma('savings_2410.txt')"""
