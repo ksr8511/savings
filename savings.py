@@ -34,5 +34,5 @@ def print_comma(txtfilename):
         """print(x1+x21)"""
         
 if __name__ == '__main__':
-    print_comma('savings_2507.txt')
+    print_comma('savings_2508.txt')
     
